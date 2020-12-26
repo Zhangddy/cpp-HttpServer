@@ -1,0 +1,17 @@
+g++ -std=c++11 -o HttpServer HttpServer.cc -lpthread
+In file included from HttpServer.hpp:6:0,
+                 from HttpServer.cc:2:
+ProtocolUtil.hpp: In member function ‘bool HttpRequest::RequestPathLegal(HttpResponse*)’:
+ProtocolUtil.hpp:245:10: error: invalid use of incomplete type ‘class HttpResponse’
+       rsp->SetPath(mStrPath);
+          ^~
+ProtocolUtil.hpp:43:7: note: forward declaration of ‘class HttpResponse’
+ class HttpResponse;
+       ^~~~~~~~~~~~
+ProtocolUtil.hpp:246:10: error: invalid use of incomplete type ‘class HttpResponse’
+       rsp->SetResourceSize(nSize);
+          ^~
+ProtocolUtil.hpp:43:7: note: forward declaration of ‘class HttpResponse’
+ class HttpResponse;
+       ^~~~~~~~~~~~
+make: *** [HttpServer] Error 1
